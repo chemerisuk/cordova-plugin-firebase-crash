@@ -1,5 +1,5 @@
 #import "FirebaseCrashPlugin.h"
-@import FirebaseCrash;
+@import Firebase;
 
 
 @implementation FirebaseCrashPlugin
