@@ -1,0 +1,49 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+           id="cordova-plugin-firebase-crash"
+      version="0.9.0">
+
+    <name>FirebaseCrashPlugin</name>
+    <description>Cordova plugin for Firebase Crash</description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+    <repo>https://github.com/chemerisuk/cordova-plugin-firebase-crash</repo>
+    <issue>https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues</issue>
+
+    <js-module src="www/FirebaseCrash.js" name="FirebaseCrashPlugin">
+        <merges target="cordova.plugins.firebase.crash" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.3.0"/>
+    </engines>
+
+    <dependency id="cordova-plugin-cocoapod-support"/>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FirebaseCrashPlugin">
+                <param name="ios-package" value="FirebaseCrashPlugin" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/FirebaseCrashPlugin.h" />
+        <source-file src="src/ios/FirebaseCrashPlugin.m" />
+
+        <pod id="Firebase/Crash" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FirebaseCrashPlugin">
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
+            </feature>
+        </config-file>
+
+        <framework src="com.google.firebase:firebase-crash:9+" />
+
+        <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseCrashPlugin.java"
+            target-dir="src/android/by/chemerisuk/cordova/firebase/" />
+    </platform>
+
+</plugin>
