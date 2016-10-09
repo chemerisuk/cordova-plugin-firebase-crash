@@ -45,7 +45,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <framework src="com.google.firebase:firebase-crash:+" />
 
         <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseCrashPlugin.java"
-            target-dir="src/android/by/chemerisuk/cordova/firebase/" />
+            target-dir="src/by/chemerisuk/cordova/firebase/" />
     </platform>
 
 </plugin>
