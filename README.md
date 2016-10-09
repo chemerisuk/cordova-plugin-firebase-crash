@@ -1,5 +1,5 @@
 # cordova-plugin-firebase-crash
-Cordova plugin for Firebase Crash
+> Cordova plugin for [Firebase Crash](https://firebase.google.com/docs/crash/)
 
 
 ## Installation
