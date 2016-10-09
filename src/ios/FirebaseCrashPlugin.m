@@ -13,7 +13,7 @@
 - (void)log:(CDVInvokedUrlCommand *)command {
     NSString* message = [command.arguments objectAtIndex:0];
 
-    FIRCrashLog(message);
+    FIRCrashMessage(message);
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
