@@ -24,6 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseCrashPlugin">
                 <param name="ios-package" value="FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
@@ -37,10 +38,11 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseCrashPlugin">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
-        <framework src="com.google.firebase:firebase-crash:9+" />
+        <framework src="com.google.firebase:firebase-crash:+" />
 
         <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseCrashPlugin.java"
             target-dir="src/android/by/chemerisuk/cordova/firebase/" />
