@@ -21,6 +21,7 @@
   "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-crash#readme",
   "keywords": [
     "cordova",
+    "firebase",
     "crash",
     "analytics",
     "ecosystem:cordova",
