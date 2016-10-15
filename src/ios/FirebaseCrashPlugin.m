@@ -10,7 +10,7 @@
     }
 }
 
-- (void)log:(CDVInvokedUrlCommand *)command {
+- (void)report:(CDVInvokedUrlCommand *)command {
     NSString* message = [command.arguments objectAtIndex:0];
 
     FIRCrashMessage(message);

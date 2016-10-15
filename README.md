@@ -13,8 +13,8 @@
 
 ## Methods
 
-### log(_message_)
+### report(_message_)
 Logs a message that will appear in a subsequent crash report.
 ```js
-window.cordova.plugins.firebase.crash.log("BOOM!");
+window.cordova.plugins.firebase.crash.report("BOOM!");
 ```

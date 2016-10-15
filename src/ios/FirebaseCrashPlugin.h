@@ -2,6 +2,6 @@
 
 @interface FirebaseCrashPlugin : CDVPlugin
 
-- (void)log:(CDVInvokedUrlCommand*)command;
+- (void)report:(CDVInvokedUrlCommand*)command;
 
 @end

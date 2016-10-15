@@ -13,8 +13,8 @@ public class FirebaseCrashPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("log")) {
-            log(callbackContext, args.getString(0));
+        if (action.equals("report")) {
+            report(callbackContext, args.getString(0));
 
             return true;
         }
@@ -22,7 +22,7 @@ public class FirebaseCrashPlugin extends CordovaPlugin {
         return false;
     }
 
-    private void log(final CallbackContext callbackContext, final String message) throws JSONException {
+    private void report(final CallbackContext callbackContext, final String message) throws JSONException {
         FirebaseCrash.log(message);
 
         callbackContext.success();

@@ -10,7 +10,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <repo>https://github.com/chemerisuk/cordova-plugin-firebase-crash</repo>
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues</issue>
 
-    <js-module src="www/FirebaseCrash.js" name="FirebaseCrashPlugin">
+    <js-module src="www/FirebaseCrash.js" name="FirebaseCrash">
         <merges target="cordova.plugins.firebase.crash" />
     </js-module>
 
@@ -22,8 +22,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="FirebaseCrashPlugin">
-                <param name="ios-package" value="FirebaseCrashPlugin" />
+            <feature name="FirebaseCrash">
+                <param name="ios-package" value="FirebaseCrash" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -36,15 +36,15 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="FirebaseCrashPlugin">
-                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
+            <feature name="FirebaseCrash">
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrash" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <framework src="com.google.firebase:firebase-crash:+" />
 
-        <source-file src="src/android/by/chemerisuk/cordova/firebase/FirebaseCrashPlugin.java"
+        <source-file src="src/android/FirebaseCrashPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
     </platform>
 
