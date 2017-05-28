@@ -1,5 +1,5 @@
 var exec = require("cordova/exec");
-var PLUGIN_NAME = "FirebaseCrashPlugin";
+var PLUGIN_NAME = "FirebaseCrash";
 
 module.exports = {
     report: function(message, success, error) {
