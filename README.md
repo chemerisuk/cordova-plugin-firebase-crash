@@ -11,6 +11,7 @@
 - Android
 
 ## Methods
+In addition to automatic reports, you can log custom events to help capture the steps leading up to a crash.
 
 ### report(_message_)
 Logs a message that will appear in a subsequent crash report.
