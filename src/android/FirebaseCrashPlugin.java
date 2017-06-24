@@ -17,6 +17,10 @@ public class FirebaseCrashPlugin extends CordovaPlugin {
             report(callbackContext, args.getString(0));
 
             return true;
+        } else if ("setEnabled".equals(action)) {
+            setEnabled(callbackContext, args.getBoolean(0));
+
+            return true;
         }
 
         return false;
@@ -24,6 +28,12 @@ public class FirebaseCrashPlugin extends CordovaPlugin {
 
     private void report(final CallbackContext callbackContext, final String message) throws JSONException {
         FirebaseCrash.log(message);
+
+        callbackContext.success();
+    }
+
+    private void setEnabled(CallbackContext callbackContext, boolean enabled) {
+        FirebaseCrash.setCrashCollectionEnabled(enabled);
 
         callbackContext.success();
     }
