@@ -18,7 +18,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova" version=">=3.5.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-hooks"/>
+    <dependency id="cordova-plugin-firebase-analytics" version="~0.10.0"/>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -31,7 +31,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/FirebaseCrashPlugin.h" />
         <source-file src="src/ios/FirebaseCrashPlugin.m" />
 
-        <pod id="Firebase/Crash" />
+        <pod id="Firebase/Crash" version="~> 4.0.0"/>
     </platform>
 
     <platform name="android">
@@ -42,7 +42,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
-        <framework src="com.google.firebase:firebase-crash:+" />
+        <framework src="com.google.firebase:firebase-crash:11.0.+" />
 
         <source-file src="src/android/FirebaseCrashPlugin.java"
             target-dir="src/by/chemerisuk/cordova/firebase/" />
