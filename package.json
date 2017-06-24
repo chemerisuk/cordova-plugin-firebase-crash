@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-crash",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Cordova plugin for Firebase Crash",
   "cordova": {
     "id": "cordova-plugin-firebase-crash",
