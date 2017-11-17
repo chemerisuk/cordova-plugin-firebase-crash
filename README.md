@@ -5,6 +5,8 @@
 
     cordova plugin add cordova-plugin-firebase-crash --save
 
+If you need to set a specific dependency version on Android then use variable `FIREBASE_VERSION`.
+
 ## Supported Platforms
 
 - iOS
