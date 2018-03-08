@@ -31,7 +31,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/FirebaseCrashlyticsPlugin.h" />
         <source-file src="src/ios/FirebaseCrashlyticsPlugin.m" />
 
-        <framework src="Firebase/Crash" type="podspec" spec="~> 4.1"/>
+        <framework src="Fabric" type="podspec" spec="~> 1.7.5"/>
+        <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
+        <framework src="Firebase/Core" type="podspec" spec="~> 4.1"/>
     </platform>
 
     <platform name="android">

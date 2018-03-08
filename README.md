@@ -23,4 +23,4 @@ window.cordova.plugins.firebase.crash.report("BOOM!");
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg
-[npm-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-crash.svg
+[npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
