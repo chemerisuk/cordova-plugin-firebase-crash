@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 
-@interface FirebaseCrashPlugin : CDVPlugin
+@interface FirebaseCrashlyticsPlugin : CDVPlugin
 
 - (void)report:(CDVInvokedUrlCommand*)command;
 - (void)setEnabled:(CDVInvokedUrlCommand*)command;

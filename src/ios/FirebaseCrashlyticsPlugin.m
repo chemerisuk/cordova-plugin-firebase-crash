@@ -1,9 +1,9 @@
-#import "FirebaseCrashPlugin.h"
+#import "FirebaseCrashlyticsPlugin.h"
 
 @import FirebaseCrash;
 
 
-@implementation FirebaseCrashPlugin
+@implementation FirebaseCrashlyticsPlugin
 
 - (void)report:(CDVInvokedUrlCommand *)command {
     NSString* message = [command.arguments objectAtIndex:0];
