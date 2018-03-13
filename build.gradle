@@ -10,6 +10,15 @@ buildscript {
     }
 }
 
+android {
+    buildTypes {
+        debug {
+            // disable crashlytics for debug builds
+            ext.enableCrashlytics = false
+        }
+    }
+}
+
 apply plugin: com.crashlytics.tools.gradle.CrashlyticsPlugin
 
 dependencies {
