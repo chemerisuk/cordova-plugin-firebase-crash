@@ -46,6 +46,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="${crashlyticsEnabled}" />
+        </config-file>
+
         <dependency id="cordova-support-google-services" version="~1.1.0"/>
 
         <framework src="com.google.firebase:firebase-core:$FIREBASE_VERSION" />

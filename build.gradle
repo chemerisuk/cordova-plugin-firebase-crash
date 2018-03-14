@@ -12,9 +12,12 @@ buildscript {
 
 android {
     buildTypes {
+        release {
+            manifestPlaceholders = [crashlyticsEnabled: true]
+        }
+
         debug {
-            // disable crashlytics for debug builds
-            ext.enableCrashlytics = false
+            manifestPlaceholders = [crashlyticsEnabled: false]
         }
     }
 }
