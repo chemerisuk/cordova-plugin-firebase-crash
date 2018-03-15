@@ -18,6 +18,8 @@ android {
 
         debug {
             manifestPlaceholders = [crashlyticsEnabled: false]
+            // do not upload debug versions to crashlytics
+            ext.enableCrashlytics = false
         }
     }
 }
