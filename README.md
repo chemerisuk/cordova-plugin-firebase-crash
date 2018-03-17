@@ -1,5 +1,5 @@
 # cordova-plugin-firebase-crash<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
-> Cordova plugin for [Firebase Crash](https://firebase.google.com/docs/crash/)
+> Cordova plugin for [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
 
 ## Installation
 
@@ -13,13 +13,7 @@ If you need to set a specific dependency version on Android then use variable `F
 - Android
 
 ## Methods
-In addition to automatic reports, you can log custom events to help capture the steps leading up to a crash.
-
-### report(_message_)
-Logs a message that will appear in a subsequent crash report.
-```js
-window.cordova.plugins.firebase.crash.report("BOOM!");
-```
+__TODO__
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg

@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-firebase-crash",
   "version": "0.11.1",
-  "description": "Cordova plugin for Firebase Crash",
+  "description": "Cordova plugin for Firebase Crashlytics",
   "cordova": {
     "id": "cordova-plugin-firebase-crash",
     "platforms": [
@@ -24,6 +24,7 @@
     "firebase",
     "crash",
     "analytics",
+    "crashlytics",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
