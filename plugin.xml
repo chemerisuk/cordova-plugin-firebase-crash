@@ -11,14 +11,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues</issue>
 
     <engines>
-        <engine name="cordova" version=">=6.0.0"/>
-        <engine name="cordova-android" version=">=6.0.0"/>
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=7.1.0"/>
         <engine name="cordova-ios" version=">=4.3.0"/>
     </engines>
 
     <platform name="ios">
-        <framework src="Fabric" type="podspec" spec="~> 1.7.6"/>
-        <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
+        <framework src="Fabric" type="podspec" spec="~> 1.7.7"/>
+        <framework src="Crashlytics" type="podspec" spec="~> 3.10.2"/>
     </platform>
 
     <platform name="android">
@@ -26,7 +26,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="${crashlyticsEnabled}" />
         </config-file>
 
-        <dependency id="cordova-support-google-services" version="~1.1.0"/>
+        <dependency id="cordova-support-google-services" version="~1.2.0"/>
 
         <framework src="build.gradle" custom="true" type="gradleReference" />
     </platform>
