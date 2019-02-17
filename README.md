@@ -24,6 +24,7 @@ On iOS you need to add extra script to upload dSYM files into your Firebase Cons
 "${PODS_ROOT}/Fabric/run"
 ```
 It's recommended to enable __Run script only when installing__, so your script will upload dSYM files only after archiving an app.
+
 6. __Xcode 10 only__: Add your app's built `Info.plist` location to the Build Phase's __Input Files__ field:
 ```
 $(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)
