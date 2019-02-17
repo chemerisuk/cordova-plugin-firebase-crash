@@ -17,8 +17,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </engines>
 
     <platform name="ios">
-        <framework src="Fabric" type="podspec" spec="~> 1.7.7"/>
-        <framework src="Crashlytics" type="podspec" spec="~> 3.10.2"/>
+        <framework src="Fabric" type="podspec" spec="~> 1.9.0"/>
+        <framework src="Crashlytics" type="podspec" spec="~> 3.12.0"/>
     </platform>
 
     <platform name="android">

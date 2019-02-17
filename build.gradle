@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.25.4'
+        classpath 'io.fabric.tools:gradle:1.26.1'
     }
 }
 
@@ -27,7 +27,7 @@ android {
 apply plugin: com.crashlytics.tools.gradle.CrashlyticsPlugin
 
 dependencies {
-    compile('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
        transitive = true
     }
 }
