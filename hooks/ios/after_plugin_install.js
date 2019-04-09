@@ -14,11 +14,13 @@ module.exports = function(context) {
     const buildPhase = xcodeProject.pbxItemByComment(comment, "PBXShellScriptBuildPhase");
 
     if (!buildPhase) {
-        xcodeProject.addBuildPhase([], "PBXShellScriptBuildPhase", comment, null, {
+        const result = xcodeProject.addBuildPhase([], "PBXShellScriptBuildPhase", comment, null, {
             shellPath: "/bin/sh",
             shellScript: "${PODS_ROOT}/Fabric/run",
             inputPaths: ["\"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\""]
         });
+
+        result.buildPhase.runOnlyForDeploymentPostprocessing = 1;
 
         fs.writeFileSync(xcodeProjectPath, xcodeProject.writeSync());
     }
