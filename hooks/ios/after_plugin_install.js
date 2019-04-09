@@ -17,7 +17,7 @@ module.exports = function(context) {
         xcodeProject.addBuildPhase([], "PBXShellScriptBuildPhase", comment, null, {
             shellPath: "/bin/sh",
             shellScript: "${PODS_ROOT}/Fabric/run",
-            inputPaths: ['"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)"']
+            inputPaths: ["\"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\""]
         });
 
         fs.writeFileSync(xcodeProjectPath, xcodeProject.writeSync());

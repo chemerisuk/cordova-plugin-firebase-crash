@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    BUILD_PHASE_COMMENT: "Crashlytics",
+    BUILD_PHASE_COMMENT: "\"Crashlytics\"",
 
     getXcodeProjectPath: function(context) {
         const ConfigParser = context.requireCordovaModule("cordova-lib").configparser;
