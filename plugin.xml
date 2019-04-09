@@ -17,6 +17,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </engines>
 
     <platform name="ios">
+        <hook type="after_plugin_install" src="hooks/ios/after_plugin_install.js" />
+        <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
+
         <framework src="Fabric" type="podspec" spec="~> 1.9.0"/>
         <framework src="Crashlytics" type="podspec" spec="~> 3.12.0"/>
     </platform>
