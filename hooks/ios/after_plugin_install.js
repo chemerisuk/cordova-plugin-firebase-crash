@@ -1,9 +1,9 @@
 const fs = require("fs");
+const xcode = require("xcode");
 const helper = require("./helper");
 
 module.exports = function(context) {
     const comment = helper.BUILD_PHASE_COMMENT;
-    const xcode = context.requireCordovaModule("xcode");
     const xcodeProjectPath = helper.getXcodeProjectPath(context);
     const xcodeProject = xcode.project(xcodeProjectPath);
 
