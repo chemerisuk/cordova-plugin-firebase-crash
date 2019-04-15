@@ -5,6 +5,8 @@
 
     cordova plugin add cordova-plugin-firebase-crash --save
 
+Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
+
 ## Supported Platforms
 
 - iOS

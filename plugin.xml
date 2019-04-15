@@ -25,6 +25,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
+        <preference name="FIREBASE_CORE_VERSION" default="16.0.+"/>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="${crashlyticsEnabled}" />
         </config-file>
@@ -32,6 +34,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <dependency id="cordova-support-google-services" version="^1.2.0"/>
 
         <framework src="build.gradle" custom="true" type="gradleReference" />
+        <framework src="com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION" />
     </platform>
 
 </plugin>
