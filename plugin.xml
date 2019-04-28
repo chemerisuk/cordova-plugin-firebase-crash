@@ -16,9 +16,23 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova-ios" version=">=4.3.0"/>
     </engines>
 
+    <js-module src="www/FirebaseCrashlytics.js" name="FirebaseCrash">
+        <merges target="cordova.plugins.firebase.crashlytics" />
+    </js-module>
+
     <platform name="ios">
         <hook type="after_plugin_install" src="hooks/ios/after_plugin_install.js" />
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
+
+        <config-file parent="/*" target="config.xml">
+            <feature name="FirebaseCrash">
+                <param name="ios-package" value="FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/FirebaseCrashPlugin.h" />
+        <source-file src="src/ios/FirebaseCrashPlugin.m" />
 
         <framework src="Fabric" type="podspec" spec="~> 1.9.0"/>
         <framework src="Crashlytics" type="podspec" spec="~> 3.12.0"/>
@@ -27,13 +41,26 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <platform name="android">
         <preference name="FIREBASE_CORE_VERSION" default="16.0.+"/>
 
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="FirebaseCrash">
+                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+  		  </config-file>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="${crashlyticsEnabled}" />
         </config-file>
 
+        <source-file src="src/android/FirebaseCrashPlugin.java" target-dir="src/by/chemerisuk/cordova/firebase/" />
+
         <dependency id="cordova-support-google-services" version="^1.2.0"/>
 
-        <framework src="build.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <framework src="com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION" />
     </platform>
 
