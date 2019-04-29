@@ -1,81 +1,34 @@
 package by.chemerisuk.cordova.firebase;
 
-import android.util.Log;
+import by.chemerisuk.cordova.support.CordovaMethod;
+import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
 import com.crashlytics.android.Crashlytics;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 
-public class FirebaseCrashPlugin extends CordovaPlugin {
-
+public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     private final String TAG = "FirebaseCrashPlugin";
 
-    @Override
-    protected void pluginInitialize() {
-        Log.d(TAG, "Starting Firebase Crash plugin");
+    @CordovaMethod(ExecutionThread.WORKER)
+    private void log(String message, CallbackContext callbackContext) {
+        Crashlytics.log(message);
+        callbackContext.success();
     }
 
-    @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("log")) {
-            this.log(callbackContext, args.getString(0));
-            return true;
-        } else if (action.equals("logError")) {
-            this.logError(callbackContext, args.getString(0));
-            return true;
-        } else if(action.equals("setUserId")){
-            this.setUserId(callbackContext, args.getString(0));
-            return true;
-        }
-
-        return false;
+    @CordovaMethod(ExecutionThread.UI)
+    private void logError(String message, CallbackContext callbackContext) {
+        Crashlytics.logException(new Exception(message));
+        callbackContext.success();
     }
 
-    private void log(final CallbackContext callbackContext, final String message) throws JSONException {
-        cordova.getThreadPool().execute(new Runnable() {
-            public void run() {
-                try {
-                    Crashlytics.log(message);
-                    callbackContext.success();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    callbackContext.error(e.getMessage());
-                }
-            }
-        });
-    }
-
-    private void logError(final CallbackContext callbackContext, final String message) {
-        this.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Crashlytics.logException(new Exception(message));
-                    callbackContext.success();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    callbackContext.error(e.getMessage());
-                }
-            }
-        });
-    }
-
-    private void setUserId(final CallbackContext callbackContext, final String userId) {
-        cordova.getActivity().runOnUiThread(new Runnable() {
-            public void run() {
-                try {
-                    Crashlytics.setUserIdentifier(userId);
-                    callbackContext.success();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    callbackContext.error(e.getMessage());
-                }
-            }
-        });
+    @CordovaMethod(ExecutionThread.UI)
+    private void setUserId(String userId, CallbackContext callbackContext) {
+        Crashlytics.setUserIdentifier(userId);
+        callbackContext.success();
     }
 
 }
