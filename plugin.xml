@@ -13,7 +13,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <engines>
         <engine name="cordova" version=">=7.1.0"/>
         <engine name="cordova-android" version=">=7.1.0"/>
-        <engine name="cordova-ios" version=">=4.3.0"/>
+        <engine name="cordova-ios" version=">=5.0.0"/>
     </engines>
 
     <js-module src="www/FirebaseCrash.js" name="FirebaseCrash">
@@ -27,15 +27,21 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file parent="/*" target="config.xml">
             <feature name="FirebaseCrash">
                 <param name="ios-package" value="FirebaseCrashPlugin" />
-                <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <header-file src="src/ios/FirebaseCrashPlugin.h" />
         <source-file src="src/ios/FirebaseCrashPlugin.m" />
 
-        <framework src="Fabric" type="podspec" spec="~> 1.9.0"/>
-        <framework src="Crashlytics" type="podspec" spec="~> 3.12.0"/>
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods>
+                <pod name="Fabric" spec="~> 1.10.0" />
+                <pod name="Crashlytics" spec="~> 3.13.0" />
+            </pods>
+        </podspec>
     </platform>
 
     <platform name="android">
@@ -44,7 +50,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
-                <param name="onload" value="true" />
             </feature>
         </config-file>
 
