@@ -1,16 +1,33 @@
-# cordova-plugin-firebase-crash<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
-> Cordova plugin for [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
+# Cordova plugin for [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
+[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
 
-## Installation
+| [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your support is appreciated. Create a PR, submit a bug or just grab me :beer: |
+|-|-|
 
-    cordova plugin add cordova-plugin-firebase-crash --save
+## Index
 
-Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
+<!-- MarkdownTOC levels="2" autolink="true" -->
+
+- [Supported Platforms](#supported-platforms)
+- [Installation](#installation)
+- [Methods](#methods)
+
+<!-- /MarkdownTOC -->
 
 ## Supported Platforms
 
 - iOS
 - Android
+
+## Installation
+
+    $ cordova plugin add cordova-plugin-firebase-crash
+
+If you get an error about CocoaPods being unable to find compatible versions, run
+    
+    $ pod repo update
+
+Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
@@ -38,3 +55,4 @@ cordova.plugins.firebase.crashlytics.setUserId("12345");
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
 [twitter-url]: https://twitter.com/chemerisuk
 [twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
+[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSR75ZMVB5NRU&source=url
