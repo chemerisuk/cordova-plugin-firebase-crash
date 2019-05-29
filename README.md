@@ -1,7 +1,7 @@
 # Cordova plugin for [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
 [![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
 
-| [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your support is appreciated. Create a PR, submit a bug or just grab me :beer: |
+| [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your help is appreciated. Create a PR, submit a bug or just grab me :beer: |
 |-|-|
 
 ## Index

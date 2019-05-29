@@ -27,5 +27,5 @@ android {
 apply plugin: com.crashlytics.tools.gradle.CrashlyticsPlugin
 
 dependencies {
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 }
