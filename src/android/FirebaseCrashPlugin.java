@@ -1,9 +1,11 @@
 package by.chemerisuk.cordova.firebase;
 
+import android.util.Log;
+
 import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
@@ -13,21 +15,33 @@ import org.json.JSONException;
 public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     private final String TAG = "FirebaseCrashPlugin";
 
+    private FirebaseCrashlytics firebaseCrashlytics;
+
+    @Override
+    protected void pluginInitialize() {
+        Log.d(TAG, "Starting Firebase Crashlytics plugin");
+
+        firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+    }
+
     @CordovaMethod(ExecutionThread.WORKER)
     private void log(String message, CallbackContext callbackContext) {
-        Crashlytics.log(message);
+        firebaseCrashlytics.log(message);
+
         callbackContext.success();
     }
 
     @CordovaMethod(ExecutionThread.UI)
     private void logError(String message, CallbackContext callbackContext) {
-        Crashlytics.logException(new Exception(message));
+        firebaseCrashlytics.recordException(new Exception(message));
+
         callbackContext.success();
     }
 
     @CordovaMethod(ExecutionThread.UI)
     private void setUserId(String userId, CallbackContext callbackContext) {
-        Crashlytics.setUserIdentifier(userId);
+        firebaseCrashlytics.setUserId(userId);
+
         callbackContext.success();
     }
 
