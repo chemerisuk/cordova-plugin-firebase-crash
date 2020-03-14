@@ -16,7 +16,7 @@ module.exports = function(context) {
     if (!buildPhase) {
         const result = xcodeProject.addBuildPhase([], "PBXShellScriptBuildPhase", comment, null, {
             shellPath: "/bin/sh",
-            shellScript: "\"${PODS_ROOT}/Fabric/run\"",
+            shellScript: "\"${PODS_ROOT}/FirebaseCrashlytics/run\"",
             inputPaths: ["\"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\""]
         });
 
