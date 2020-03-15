@@ -46,6 +46,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
+        <preference name="FIREBASE_CRASHLYTICS_VERSION" default="17.0.0-beta01"/>
+
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
@@ -62,6 +64,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <source-file src="src/android/FirebaseCrashPlugin.java" target-dir="src/by/chemerisuk/cordova/firebase/" />
 
+        <framework src="com.google.firebase:firebase-crashlytics:$FIREBASE_CRASHLYTICS_VERSION" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     </platform>
 

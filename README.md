@@ -27,7 +27,7 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
+Use variable `FIREBASE_CRASHLYTICS_VERSION` to override dependency version on Android.
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
