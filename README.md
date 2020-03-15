@@ -10,6 +10,7 @@
 
 - [Supported Platforms](#supported-platforms)
 - [Installation](#installation)
+- [Disable data collection](#disable-data-collection)
 - [Methods](#methods)
 
 <!-- /MarkdownTOC -->
@@ -28,6 +29,13 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     $ pod repo update
 
 Use variable `FIREBASE_CRASHLYTICS_VERSION` to override dependency version on Android.
+
+## Disable data collection
+In some cases, you may wish to temporarily or permanently disable collection of crash data. You can set the value of variable `FIREBASE_CRASHLYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
+
+    $ cordova plugin add cordova-plugin-firebase-crash --variable FIREBASE_CRASHLYTICS_COLLECTION_ENABLED=false
+
+Later you can re-enable crashlytics (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
@@ -48,6 +56,12 @@ cordova.plugins.firebase.crashlytics.logError("my non-fatal exception message");
 Sets the user identifier property for crashlytics reporting. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#set_user_identifiers).
 ```js
 cordova.plugins.firebase.crashlytics.setUserId("12345");
+```
+
+### setEnabled(_enabled_)
+Sets whether crashlytics collection is enabled for this app on this device.
+```js
+cordova.plugins.firebase.crashlytics.setEnabled(false);
 ```
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
