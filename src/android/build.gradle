@@ -14,12 +14,7 @@ apply plugin: com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsPlugi
 
 android {
     buildTypes {
-        release {
-            manifestPlaceholders = [crashlyticsEnabled: true]
-        }
-
         debug {
-            manifestPlaceholders = [crashlyticsEnabled: false]
             // do not upload debug versions to crashlytics
             firebaseCrashlytics {
                 mappingFileUploadEnabled false
