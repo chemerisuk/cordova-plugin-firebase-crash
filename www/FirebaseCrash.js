@@ -16,5 +16,10 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setUserId", [userId]);
         });
+    },
+    setEnabled: function(enabled) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
+        });
     }
 };

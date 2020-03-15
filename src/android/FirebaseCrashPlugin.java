@@ -45,4 +45,11 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
 
+    @CordovaMethod
+    private void setEnabled(boolean enabled, CallbackContext callbackContext) {
+        firebaseCrashlytics.setCrashlyticsCollectionEnabled(enabled);
+
+        callbackContext.success();
+    }
+
 }

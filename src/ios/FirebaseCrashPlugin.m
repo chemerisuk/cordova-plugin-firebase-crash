@@ -44,4 +44,13 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setEnabled:(CDVInvokedUrlCommand *)command {
+    bool enabled = [[command.arguments objectAtIndex:0] boolValue];
+
+    [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:enabled];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 @end
