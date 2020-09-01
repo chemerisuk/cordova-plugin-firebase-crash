@@ -28,7 +28,7 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Use variable `FIREBASE_CRASHLYTICS_VERSION` to override dependency version on Android.
+Use variables `IOS_FIREBASE_CRASHLYTICS_VERSION`  `ANDROID_FIREBASE_CRASHLYTICS_VERSION` to override dependency versions for Firebase SDKs.
 
 ## Disable data collection
 In some cases, you may wish to temporarily or permanently disable collection of crash data. You can set the value of variable `FIREBASE_CRASHLYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
