@@ -33,6 +33,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file parent="/*" target="config.xml">
             <feature name="FirebaseCrash">
                 <param name="ios-package" value="FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
@@ -63,6 +64,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
