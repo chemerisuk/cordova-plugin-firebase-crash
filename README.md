@@ -1,5 +1,5 @@
 # Cordova plugin for [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics/)
-[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
+[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![NPM total downloads][npm-total-downloads]][npm-url] [![PayPal donate](https://img.shields.io/badge/paypal-donate-ff69b4?logo=paypal)][donate-url] [![Twitter][twitter-follow]][twitter-url]
 
 | [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your help is appreciated. Create a PR, submit a bug or just grab me :beer: |
 |-|-|
@@ -67,6 +67,7 @@ cordova.plugins.firebase.crashlytics.setEnabled(false);
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
+[npm-total-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-crash.svg?label=total+downloads
 [twitter-url]: https://twitter.com/chemerisuk
 [twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
 [donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSR75ZMVB5NRU&source=url

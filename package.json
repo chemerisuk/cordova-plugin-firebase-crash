@@ -19,6 +19,7 @@
     "url": "https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues"
   },
   "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-crash#readme",
+  "funding": "https://github.com/chemerisuk/cordova-plugin-firebase-crash?sponsor=1",
   "keywords": [
     "cordova",
     "firebase",
