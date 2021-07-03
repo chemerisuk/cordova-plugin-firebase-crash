@@ -11,12 +11,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues</issue>
 
     <engines>
-        <engine name="cordova" version=">=9.0.0"/>
-        <engine name="cordova-android" version=">=8.0.0"/>
+        <engine name="cordova" version=">=10.0.0"/>
+        <engine name="cordova-android" version=">=9.0.0"/>
         <engine name="cordova-ios" version=">=6.0.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-analytics" version="~5.0.0"/>
+    <dependency id="cordova-plugin-firebase-analytics" version="~6.0.0"/>
 
     <js-module src="www/FirebaseCrash.js" name="FirebaseCrash">
         <merges target="cordova.plugins.firebase.crashlytics" />
@@ -25,7 +25,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <preference name="FIREBASE_CRASHLYTICS_COLLECTION_ENABLED" default="true" />
 
     <platform name="ios">
-        <preference name="IOS_FIREBASE_CRASHLYTICS_VERSION" default="~> 7.0.0"/>
+        <preference name="IOS_FIREBASE_CRASHLYTICS_VERSION" default="~> 8.2.0"/>
 
         <hook type="after_plugin_install" src="hooks/ios/after_plugin_install.js" />
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
@@ -59,7 +59,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="17.3.+"/>
+        <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.1.+"/>
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
