@@ -66,6 +66,14 @@ Sets whether crashlytics collection is enabled for this app on this device.
 cordova.plugins.firebase.crashlytics.setEnabled(false);
 ```
 
+### setCustomKey(_key_, _value_)
+Add custom key/value pairs to crashlytics report. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?platform=android).
+```js
+cordova.plugins.firebase.crashlytics.setCustomKey("my-string-key", "test value");
+cordova.plugins.firebase.crashlytics.setCustomKey("my-number-key", 123);
+cordova.plugins.firebase.crashlytics.setCustomKey("my-boolean-key", true);
+```
+
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
