@@ -63,7 +63,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)setNumValue:(CDVInvokedUrlCommand *)command {
+- (void)setNumberValue:(CDVInvokedUrlCommand *)command {
     NSString* key = [command.arguments objectAtIndex:0];
     NSNumber* value = [command.arguments objectAtIndex:1];
 
@@ -73,7 +73,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)setBoolValue:(CDVInvokedUrlCommand *)command {
+- (void)setBooleanValue:(CDVInvokedUrlCommand *)command {
     NSString* key = [command.arguments objectAtIndex:0];
     bool value = [[command.arguments objectAtIndex:1] boolValue];
 

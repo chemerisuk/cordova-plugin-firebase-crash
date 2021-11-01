@@ -60,7 +60,7 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod(ExecutionThread.UI)
-    private void setNumValue(String key, Object value, CallbackContext callbackContext) {
+    private void setNumberValue(String key, Object value, CallbackContext callbackContext) {
         if(value instanceof Integer) {
             firebaseCrashlytics.setCustomKey(key, (Integer) value);
         } else if(value instanceof Long) {
@@ -75,7 +75,7 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod(ExecutionThread.UI)
-    private void setBoolValue(String key, boolean value, CallbackContext callbackContext) {
+    private void setBooleanValue(String key, boolean value, CallbackContext callbackContext) {
         firebaseCrashlytics.setCustomKey(key, value);
 
         callbackContext.success();

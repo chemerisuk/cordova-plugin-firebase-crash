@@ -32,9 +32,9 @@ module.exports = {
             } else if(typeof value === "string") {
                 exec(resolve, reject, PLUGIN_NAME, "setStringValue", [key, value]);
             } else if(typeof value === "number") {
-                exec(resolve, reject, PLUGIN_NAME, "setNumValue", [key, value]);
+                exec(resolve, reject, PLUGIN_NAME, "setNumberValue", [key, value]);
             } else if(typeof value === "boolean") {
-                exec(resolve, reject, PLUGIN_NAME, "setBoolValue", [key, value]);
+                exec(resolve, reject, PLUGIN_NAME, "setBooleanValue", [key, value]);
             }        
         });
     }

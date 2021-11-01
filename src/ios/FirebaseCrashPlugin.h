@@ -7,7 +7,7 @@
 - (void)setUserId:(CDVInvokedUrlCommand*)command;
 - (void)setEnabled:(CDVInvokedUrlCommand*)command;
 - (void)setStringValue:(CDVInvokedUrlCommand*)command;
-- (void)setNumValue:(CDVInvokedUrlCommand*)command;
-- (void)setBoolValue:(CDVInvokedUrlCommand*)command;
+- (void)setNumberValue:(CDVInvokedUrlCommand*)command;
+- (void)setBooleanValue:(CDVInvokedUrlCommand*)command;
 
 @end
