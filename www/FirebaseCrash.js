@@ -21,5 +21,21 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
         });
+    },
+    setCustomKey: function(key, value) {
+        return new Promise(function(resolve, reject) {
+            if (typeof key !== "string") {
+                return reject(new TypeError("Custom key must be a string"));
+            }
+            if (typeof value !== "string" && typeof value !== "number" && typeof value !== "boolean") {
+                return reject(new TypeError("Custom value must be a string/number/boolean"));
+            } else if(typeof value === "string") {
+                exec(resolve, reject, PLUGIN_NAME, "setStringValue", [key, value]);
+            } else if(typeof value === "number") {
+                exec(resolve, reject, PLUGIN_NAME, "setNumberValue", [key, value]);
+            } else if(typeof value === "boolean") {
+                exec(resolve, reject, PLUGIN_NAME, "setBooleanValue", [key, value]);
+            }        
+        });
     }
 };
