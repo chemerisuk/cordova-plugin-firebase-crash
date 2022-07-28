@@ -4,6 +4,14 @@
 | [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your help is appreciated. Create a PR, submit a bug or just grab me :beer: |
 |-|-|
 
+[npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
+[npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg
+[npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
+[npm-total-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-crash.svg?label=total+downloads
+[twitter-url]: https://twitter.com/chemerisuk
+[twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
+[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSR75ZMVB5NRU&source=url
+
 ## Index
 
 <!-- MarkdownTOC levels="2" autolink="true" -->
@@ -43,44 +51,132 @@ In some cases, you may wish to temporarily or permanently disable collection of 
 Later you can re-enable crashlytics (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
 ## Methods
-Every method returns a promise that fulfills when a call was successful.
 
-### log(_message_)
-Add logging that will be sent with your crash data in case of app crash. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#add_custom_log_messages).
-```js
+### ▸ **log**(`message`): `Promise`<`void`\>
+
+Add logging that will be sent with your crash data in case of app crash.
+
+**`See`**
+
+https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#add_custom_log_messages
+
+**`Example`**
+
+```ts
 cordova.plugins.firebase.crashlytics.log("my custom log message");
 ```
 
-### logError(_message_)
-Log non-fatal exceptions in addition to automatically reported app crashes. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#log_non-fatal_exceptions).
-```js
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Log message |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+### ▸ **logError**(`message`): `Promise`<`void`\>
+
+Log non-fatal exceptions in addition to automatically reported app crashes.
+
+**`See`**
+
+https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#log_non-fatal_exceptions
+
+**`Example`**
+
+```ts
 cordova.plugins.firebase.crashlytics.logError("my non-fatal exception message");
 ```
 
-### setUserId(_userId_)
-Sets the user identifier property for crashlytics reporting. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#set_user_identifiers).
-```js
-cordova.plugins.firebase.crashlytics.setUserId("12345");
-```
+#### Parameters
 
-### setEnabled(_enabled_)
-Sets whether crashlytics collection is enabled for this app on this device.
-```js
-cordova.plugins.firebase.crashlytics.setEnabled(false);
-```
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Log message |
 
-### setCustomKey(_key_, _value_)
-Add custom key/value pairs to crashlytics report. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?platform=android).
-```js
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+### ▸ **setCustomKey**(`key`, `value`): `Promise`<`void`\>
+
+Add custom key/value pairs to crashlytics report.
+
+**`See`**
+
+https://firebase.google.com/docs/crashlytics/customize-crash-reports?platform=android
+
+**`Example`**
+
+```ts
 cordova.plugins.firebase.crashlytics.setCustomKey("my-string-key", "test value");
 cordova.plugins.firebase.crashlytics.setCustomKey("my-number-key", 123);
 cordova.plugins.firebase.crashlytics.setCustomKey("my-boolean-key", true);
 ```
 
-[npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-crash
-[npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-crash.svg
-[npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-crash.svg
-[npm-total-downloads]: https://img.shields.io/npm/dt/cordova-plugin-firebase-crash.svg?label=total+downloads
-[twitter-url]: https://twitter.com/chemerisuk
-[twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
-[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSR75ZMVB5NRU&source=url
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | Name of the custom key |
+| `value` | `string` \| `number` \| `boolean` | Value of the custom key |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+### ▸ **setEnabled**(`enabled`): `Promise`<`void`\>
+
+Sets whether crashlytics collection is enabled for this app on this device.
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.crashlytics.setEnabled(false);
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `enabled` | `boolean` | Flag that specifies new state |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+### ▸ **setUserId**(`userId`): `Promise`<`void`\>
+
+Sets the user identifier property for crashlytics reporting.
+
+**`See`**
+
+https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#set_user_identifiers
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.crashlytics.setUserId("12345");
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `userId` | `string` | User's indentifier string |
+
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
