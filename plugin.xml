@@ -16,16 +16,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <engine name="cordova-ios" version=">=6.0.0"/>
     </engines>
 
-    <dependency id="cordova-plugin-firebase-analytics" version="~6.1.0"/>
-
     <js-module src="www/FirebaseCrash.js" name="FirebaseCrash">
         <merges target="cordova.plugins.firebase.crashlytics" />
     </js-module>
 
-    <preference name="FIREBASE_CRASHLYTICS_COLLECTION_ENABLED" default="true" />
+    <preference name="CRASHLYTICS_COLLECTION_ENABLED" default="true" />
 
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="~> 8.8.0"/>
+        <preference name="IOS_FIREBASE_POD_VERSION" default="9.3.0" />
 
         <hook type="after_plugin_install" src="hooks/ios/after_plugin_install.js" />
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
@@ -42,7 +40,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
         -->
         <config-file target="*-Info.plist" parent="FirebaseCrashlyticsCollectionEnabled">
-            <string>$FIREBASE_CRASHLYTICS_COLLECTION_ENABLED</string>
+            <string>$CRASHLYTICS_COLLECTION_ENABLED</string>
         </config-file>
 
         <header-file src="src/ios/FirebaseCrashPlugin.h" />
@@ -52,14 +50,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <config>
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
-            <pods>
+            <pods use-frameworks="true">
                 <pod name="Firebase/Crashlytics" spec="$IOS_FIREBASE_POD_VERSION" />
             </pods>
         </podspec>
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.2.+"/>
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="30.3.1" />
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
@@ -68,17 +66,26 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
+        <config-file target="config.xml" parent="/*">
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.13" />
+        </config-file>
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
   		</config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="$FIREBASE_CRASHLYTICS_COLLECTION_ENABLED" />
+            <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="$CRASHLYTICS_COLLECTION_ENABLED" />
         </config-file>
 
         <source-file src="src/android/FirebaseCrashPlugin.java" target-dir="src/by/chemerisuk/cordova/firebase/" />
 
-        <framework src="com.google.firebase:firebase-crashlytics:$ANDROID_FIREBASE_CRASHLYTICS_VERSION" />
+        <dependency id="cordova-support-android-plugin" version="~2.0.1" />
+
+        <framework src="platform('com.google.firebase:firebase-bom:$ANDROID_FIREBASE_BOM_VERSION')" />
+        <framework src="com.google.firebase:firebase-crashlytics" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     </platform>
 
