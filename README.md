@@ -50,6 +50,27 @@ In some cases, you may wish to temporarily or permanently disable collection of 
 
 Later you can re-enable crashlytics (for instance after getting end-user consent) using method [setEnabled](#setenabledenabled).
 
+### Adding required configuration files
+
+Cordova supports `resource-file` tag for easy copying resources files. Firebase SDK requires `google-services.json` on Android and `GoogleService-Info.plist` on iOS platforms.
+
+1. Put `google-services.json` and/or `GoogleService-Info.plist` into the root directory of your Cordova project
+2. Add new tag for Android platform
+
+```xml
+<platform name="android">
+    ...
+    <resource-file src="google-services.json" target="app/google-services.json" />
+</platform>
+...
+<platform name="ios">
+    ...
+    <resource-file src="GoogleService-Info.plist" />
+</platform>
+```
+
+This way config files will be copied on `cordova prepare` step.
+
 ## Methods
 
 ### ▸ **log**(`message`): `Promise`<`void`\>
