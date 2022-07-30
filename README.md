@@ -73,7 +73,7 @@ This way config files will be copied on `cordova prepare` step.
 
 ## Methods
 
-### ▸ **log**(`message`): `Promise`<`void`\>
+### **log**(`message`): `Promise`<`void`\>
 
 Add logging that will be sent with your crash data in case of app crash.
 
@@ -99,7 +99,7 @@ cordova.plugins.firebase.crashlytics.log("my custom log message");
 
 Callback when operation is completed
 
-### ▸ **logError**(`message`): `Promise`<`void`\>
+### **logError**(`message`): `Promise`<`void`\>
 
 Log non-fatal exceptions in addition to automatically reported app crashes.
 
@@ -125,7 +125,7 @@ cordova.plugins.firebase.crashlytics.logError("my non-fatal exception message");
 
 Callback when operation is completed
 
-### ▸ **setCustomKey**(`key`, `value`): `Promise`<`void`\>
+### **setCustomKey**(`key`, `value`): `Promise`<`void`\>
 
 Add custom key/value pairs to crashlytics report.
 
@@ -154,7 +154,7 @@ cordova.plugins.firebase.crashlytics.setCustomKey("my-boolean-key", true);
 
 Callback when operation is completed
 
-### ▸ **setEnabled**(`enabled`): `Promise`<`void`\>
+### **setEnabled**(`enabled`): `Promise`<`void`\>
 
 Sets whether crashlytics collection is enabled for this app on this device.
 
@@ -176,7 +176,7 @@ cordova.plugins.firebase.crashlytics.setEnabled(false);
 
 Callback when operation is completed
 
-### ▸ **setUserId**(`userId`): `Promise`<`void`\>
+### **setUserId**(`userId`): `Promise`<`void`\>
 
 Sets the user identifier property for crashlytics reporting.
 

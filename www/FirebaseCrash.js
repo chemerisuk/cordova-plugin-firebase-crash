@@ -1,5 +1,6 @@
-var exec = require("cordova/exec");
 var PLUGIN_NAME = "FirebaseCrash";
+// @ts-ignore
+var exec = require("cordova/exec");
 
 module.exports = {
     log:
