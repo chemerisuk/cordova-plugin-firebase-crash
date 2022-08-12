@@ -2,6 +2,7 @@
   "name": "cordova-plugin-firebase-crash",
   "version": "7.0.2",
   "description": "Cordova plugin for Firebase Crashlytics",
+  "types": "./types/index.d.ts",
   "cordova": {
     "id": "cordova-plugin-firebase-crash",
     "platforms": [
