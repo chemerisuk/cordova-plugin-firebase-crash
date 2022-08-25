@@ -71,7 +71,9 @@ Cordova supports `resource-file` tag for easy copying resources files. Firebase 
 
 This way config files will be copied on `cordova prepare` step.
 
-## Methods
+<!-- TypedocGenerated -->
+
+## Functions
 
 ### **log**(`message`): `Promise`<`void`\>
 
