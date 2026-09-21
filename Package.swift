@@ -2,10 +2,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "cordova-plugin-firebase-crashlytics",
+    name: "cordova-plugin-firebase-crash",
     platforms: [.iOS(.v15)],
     products: [
-        .library(name: "cordova-plugin-firebase-crashlytics", targets: ["cordova-plugin-firebase-crashlytics"])
+        .library(name: "cordova-plugin-firebase-crash", targets: ["cordova-plugin-firebase-crash"])
     ],
     dependencies: [
         .package(url: "https://github.com/apache/cordova-ios.git", branch: "master"),
@@ -13,7 +13,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "cordova-plugin-firebase-crashlytics",
+            name: "cordova-plugin-firebase-crash",
             dependencies: [
                 .product(name: "Cordova", package: "cordova-ios"),
                 .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
