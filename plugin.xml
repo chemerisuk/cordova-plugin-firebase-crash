@@ -22,9 +22,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <preference name="CRASHLYTICS_COLLECTION_ENABLED" default="true" />
 
-    <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0" />
+    <platform name="ios" package="swift">
+        <preference name="IOS_FIREBASE_POD_VERSION" default="12.19.1" />
 
+        <hook src="hooks/ios/update_package_swift.js" type="after_plugin_install" />
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
 
         <config-file parent="/*" target="config.xml">
@@ -50,7 +51,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="Firebase/Crashlytics" spec="$IOS_FIREBASE_POD_VERSION" />
+                <pod name="Firebase/Crashlytics" spec="$IOS_FIREBASE_POD_VERSION" nospm="true" />
             </pods>
         </podspec>
     </platform>
