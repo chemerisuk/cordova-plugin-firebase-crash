@@ -19,7 +19,7 @@
 - [Supported Platforms](#supported-platforms)
 - [Installation](#installation)
 - [Disable data collection](#disable-data-collection)
-- [Methods](#methods)
+- [Functions](#functions)
 
 <!-- /MarkdownTOC -->
 
@@ -36,10 +36,10 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
     
     $ pod repo update
 
-Use variables `IOS_FIREBASE_POD_VERSION`  `ANDROID_FIREBASE_BOM_VERSION` to override dependency versions for Firebase SDKs:
+Use variables `IOS_FIREBASE_SDK_VERSION`  `ANDROID_FIREBASE_BOM_VERSION` to override dependency versions for Firebase SDKs:
 
     $ cordova plugin add cordova-plugin-firebase-crash \
-        --variable IOS_FIREBASE_POD_VERSION="9.3.0" \
+        --variable IOS_FIREBASE_SDK_VERSION="9.3.0" \
         --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
 
 ## Disable data collection
