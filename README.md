@@ -39,8 +39,8 @@ If you get an error about CocoaPods being unable to find compatible versions, ru
 Use variables `IOS_FIREBASE_SDK_VERSION`  `ANDROID_FIREBASE_BOM_VERSION` to override dependency versions for Firebase SDKs:
 
     $ cordova plugin add cordova-plugin-firebase-crash \
-        --variable IOS_FIREBASE_SDK_VERSION="9.3.0" \
-        --variable ANDROID_FIREBASE_BOM_VERSION="30.3.1"
+        --variable IOS_FIREBASE_SDK_VERSION="12.19.1" \
+        --variable ANDROID_FIREBASE_BOM_VERSION="34.19.0"
 
 ## Disable data collection
 In some cases, you may wish to temporarily or permanently disable collection of crash data. You can set the value of variable `CRASHLYTICS_COLLECTION_ENABLED` to `false` to prevent collecting any user data:
