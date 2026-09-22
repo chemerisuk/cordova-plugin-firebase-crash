@@ -25,7 +25,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <platform name="ios" package="swift">
         <preference name="IOS_FIREBASE_SDK_VERSION" default="12.19.1" />
 
-        <hook src="hooks/ios/update_package_swift.js" type="after_plugin_install" />
+        <!-- <hook src="hooks/ios/update_package_swift.js" type="after_plugin_install" /> -->
         <hook src="hooks/ios/after_plugin_install.js" type="after_plugin_install" />
         <hook src="hooks/ios/before_plugin_uninstall.js" type="before_plugin_uninstall" />
 
